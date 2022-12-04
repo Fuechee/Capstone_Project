@@ -21,11 +21,10 @@ def registered_customers(request):
         'User ', f"{request.user.id} {request.user.email} {request.user.username}")
     if request.method == 'POST':
         serializer = CustomerSerializer(data=request.data)
-        if serializer.is_vaild():
-            serializer.save(user=request.user)
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        serializer.is_vaild(raise_exception=True)
+        serializer.save(user=request.user)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
     elif request.method == 'GET':
-        customers = Customer.objects.filter(user_id=request.user.id)
+        customers = Customer.objects.filter(id=request.user.id)
         serializer = CustomerSerializer(customers, many=True)
         return Response(serializer.data)
