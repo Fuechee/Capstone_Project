@@ -1,4 +1,4 @@
-const HomePage = (props) => {
+const HomePage = () => {
     return ( 
         <div>
             <h1>Headphone and Earphones</h1>
