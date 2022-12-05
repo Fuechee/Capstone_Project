@@ -14,16 +14,15 @@ def customers_list(request):
     serializer = CustomerSerializer(customers, many=True)
     return Response(serializer.data)
 
-@api_view(['GET', 'POST'])
+@api_view(['POST', 'GET'])
 @permission_classes([IsAuthenticated])
 def registered_customers(request):
-    print(
-        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
     if request.method == 'POST':
         serializer = CustomerSerializer(data=request.data)
-        serializer.is_vaild(raise_exception=True)
-        serializer.save(user=request.user)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        if serializer.is_valid():
+            serializer.save(user=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
         customers = Customer.objects.filter(id=request.user.id)
         serializer = CustomerSerializer(customers, many=True)
