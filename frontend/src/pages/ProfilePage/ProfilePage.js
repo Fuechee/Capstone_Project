@@ -1,7 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
 import axios from "axios";
 
 const ProfilePage = () => {
@@ -10,7 +9,6 @@ const ProfilePage = () => {
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
   const [customers, setCustomers] = useState([]);
-  // const [products, setProducts] = useState([]);
 
   useEffect(() => {
     const fetchCustomers = async () => {
@@ -26,16 +24,6 @@ const ProfilePage = () => {
       }
     };
     fetchCustomers();
-    // const fetchProducts = async () => {
-    //   try {
-    //     let response = await axios.get("http://127.0.0.1:8000/api/products/all/", {
-    //     });
-    //     setProducts(response.data);
-    //   } catch (error) {
-    //     console.log(error.response.data);
-    //   }
-    // };
-    // fetchProducts();
   }, [token]);
   return (
     <div className="container">
