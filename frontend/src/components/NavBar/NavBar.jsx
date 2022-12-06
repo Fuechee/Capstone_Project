@@ -4,6 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import NavItems from "../NavItems/Navitems";
 import "./NavBar.css";
+import logo from "./logo.png"
 
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
@@ -12,9 +13,7 @@ const Navbar = () => {
     <div className="navBar">
       <ul>
         <li className="brand">
-          <Link to="/home" style={{ textDecoration: "none", color: "white" }}>
-            <b>AudioHead</b>
-          </Link>
+          <Link to="/home" style={{ textDecoration: "none", color: "white" }}> <img className="logo" src={logo} alt="logo" /> </Link>
         </li>
         <NavItems />
         <li>
