@@ -15,6 +15,7 @@ html {
 
 p {
   font-size: 20px;
+  color: white;
 }
 
 button {
@@ -38,6 +39,7 @@ button:hover {
   max-width: 600px;
   overflow: auto;
   text-align: center;
+  margin-top: 2rem;
 }
 
 .form {
@@ -57,22 +59,31 @@ button:hover {
   font-size: 17px;
 }
 
-.background-image {
-  background-image: url("headphones1.jpg");
-  background-color: #cccccc;
-  height: 60rem;
+.home-image {
+  background-image: linear-gradient(2deg, black, transparent),url("headphones1.jpg");
+  height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
 }
 
-.background-text {
+.home-text {
   text-align: center;
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+  
+}
+
+.background {
+  background-image: linear-gradient(2deg, black, transparent);
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 

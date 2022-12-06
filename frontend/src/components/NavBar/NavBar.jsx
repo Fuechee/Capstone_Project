@@ -12,7 +12,7 @@ const Navbar = () => {
   const navigate = useNavigate();
   return (
     <div className="navBar">
-      <ul>
+      <ul className="navBarUL">
         <li className="brand">
           <Link to="/home" style={{ textDecoration: "none", color: "white" }}> <img className="logo" src={logo} alt="logo" /> </Link>
         </li>
