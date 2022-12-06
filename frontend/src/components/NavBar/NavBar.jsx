@@ -6,6 +6,7 @@ import NavItems from "../NavItems/Navitems";
 import "./NavBar.css";
 import logo from "./logo.png"
 
+
 const Navbar = () => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const Navbar = () => {
           ) : (
             <button onClick={() => navigate("/login")}>Login</button>
           )}
+          <button onClick={() => navigate("/cart")}>Cart</button>
         </li>
       </ul>
     </div>
