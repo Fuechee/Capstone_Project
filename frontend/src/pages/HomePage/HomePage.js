@@ -1,8 +1,7 @@
 const HomePage = () => {
     return ( 
-        <div>
-            <h1>Headphone and Earphones</h1>
-            <h2>Discover your needs for every occasion</h2>
+        <div className="header">
+            <h1>Discover your needs for every occasion</h1>
         </div>
      );
 }
