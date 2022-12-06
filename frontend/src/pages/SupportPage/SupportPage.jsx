@@ -16,27 +16,55 @@ const SupportPage = () => {
 
     return ( 
         <div className="background">
-            <div className="contact">
-                <h1>Contact Us</h1>
+            <div className="issues">
+                <h1>What's The Problem?</h1>
                 <form onSubmit={handleSubmit}>
-                    <label>What's your question?:
+                    <label>
                         <select >
-                            <option value="grapefruit">Grapefruit</option>
-                            <option value="lime">Lime</option>
-                            <option value="coconut">Coconut</option>
-                            <option value="mango">Mango</option>
+                            <option value="question">What's your question?</option>
+                            <option value="online">Online Order</option>
+                            <option value="product">Product Problems</option>
+                            <option value="profile">Profile Problems</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select >
+                            <option value="product-type">What's the product type?</option>
+                            <option value="headphones">Headphones</option>
+                            <option value="earphones">Earphones</option>
+                        </select>
+                    </label>
+                    <label>
+                        <select >
+                            <option value="product">What's the product?</option>
+                            <option value="online">Online Order</option>
+                            <option value="product">Product Problems</option>
+                            <option value="profile">Profile Problems</option>
+                            <option value="profile">Profile Problems</option>
+                            <option value="profile">Profile Problems</option>
+                            <option value="profile">Profile Problems</option>
+                            <option value="profile">Profile Problems</option>
+                            <option value="profile">Profile Problems</option>
+                            <option value="profile">Profile Problems</option>
                         </select>
                     </label>
                     <label>Do You Have An Order Number?: 
                         <input 
-                        type="number" 
-                        name="age" 
-                        value={inputs.age || ""} 
+                        type="text" 
+                        name="name" 
+                        value={inputs.name || ""} 
                         onChange={handleChange}
                         />
-                        </label>
-                    <input type="submit" />
+                    </label>
                 </form>
+            </div>
+            <div className="details">
+                <h1>Your Personal Details</h1>
+                <form>
+                    <label>
+                        <input type="text" name="name" />
+                    </label>
+                    </form>
             </div>
         </div>
      );
