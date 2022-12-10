@@ -87,3 +87,6 @@ button:hover {
   position: relative;
 }
 
+.profile {
+  list-style: none;
+}

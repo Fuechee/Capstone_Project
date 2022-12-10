@@ -37,15 +37,19 @@ const SupportPage = () => {
                     <label>
                         <select >
                             <option value="product">What's the product?</option>
-                            <option value="online">Online Order</option>
-                            <option value="product">Product Problems</option>
-                            <option value="profile">Profile Problems</option>
-                            <option value="profile">Profile Problems</option>
-                            <option value="profile">Profile Problems</option>
-                            <option value="profile">Profile Problems</option>
-                            <option value="profile">Profile Problems</option>
-                            <option value="profile">Profile Problems</option>
-                            <option value="profile">Profile Problems</option>
+                            <option value="product">Momentum 4 Wireless</option>
+                            <option value="profile">HD 458BT</option>
+                            <option value="profile">HD 450BT</option>
+                            <option value="profile">HD 350BT</option>
+                            <option value="profile">HD 250BT</option>
+                            <option value="profile">HD 800 S</option>
+                            <option value="profile">HD 650</option>
+                            <option value="profile">HD 600</option>
+                            <option value="profile">HD 560S</option>
+                            <option value="profile">CX Plus SE True Wireless</option>
+                            <option value="profile">Momentum True Wireless 3</option>
+                            <option value="profile">CX True Wireless</option>
+                            <option value="profile">Sport Wireless</option>
                         </select>
                     </label>
                     <label>Do You Have An Order Number?: 
