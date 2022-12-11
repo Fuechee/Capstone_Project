@@ -5,19 +5,22 @@ from rest_framework import status
 from .serializers import ProductSerializer
 from .models import Product
 
-@api_view(['GET'])
+@api_view(['GET', 'POST'])
 @permission_classes([AllowAny])
-def get_products(request):
-    products = Product.objects.all()
-    serializer = ProductSerializer(products, many=True)
-    return Response(serializer.data)
+def products_list(request):
+    if request.method == 'GET':
+        type_param = request.query_params.get('type')
+        queryset = Product.objects.all()
+        if type_param:
+            queryset = queryset.filter(type=type_param)
 
-@api_view(['POST'])
-def create_products(request):
-    serializer = ProductSerializer(data=request.data)
-    serializer.is_valid(raise_exception=True)
-    serializer.save()
-    return Response(serializer.data, status=status.HTTP_201_CREATED)
+        serializer = ProductSerializer(queryset, many=True)
+        return Response(serializer.data)
+    elif request.method == 'POST':
+        serializer = ProductSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)    
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
