@@ -43,30 +43,30 @@ const SupportPage = () => {
                             <select name="option" onChange={handleChange} value={formData.option || ''}>
                                 <option value="">--Please choose an option--</option>
                                 <option value="online">Online Order</option>
-                                <option value="product">Product Problems</option>
+                                <option value="product_problems">Product Problems</option>
                                 <option value="profile">Profile Problems</option>
                             </select>
                         </label>
                         <label>
                             <select name="product" disabled={formData.question !== 'Product Problems'} onChange={handleChange} value={formData.product || ''}>
                                 <option value="">--What's the product?--</option>
-                                <option value="product">Momentum 4 Wireless</option>
-                                <option value="profile">HD 540BT</option>
-                                <option value="profile">HD 450BT</option>
-                                <option value="profile">HD 350BT</option>
-                                <option value="profile">HD 250BT</option>
-                                <option value="profile">HD 800 S</option>
-                                <option value="profile">HD 650</option>
-                                <option value="profile">HD 600</option>
-                                <option value="profile">HD 560S</option>
-                                <option value="profile">CX Plus SE True Wireless</option>
-                                <option value="profile">Momentum True Wireless 3</option>
-                                <option value="profile">CX True Wireless</option>
-                                <option value="profile">Sport True Wireless</option>
+                                <option value="Momentum 4 Wireless">Momentum 4 Wireless</option>
+                                <option value="HD 540BT">HD 540BT</option>
+                                <option value="HD 450BT">HD 450BT</option>
+                                <option value="HD 350BT">HD 350BT</option>
+                                <option value="HD 250BT">HD 250BT</option>
+                                <option value="HD 800 S">HD 800 S</option>
+                                <option value="HD 650">HD 650</option>
+                                <option value="HD 600">HD 600</option>
+                                <option value="HD 560S">HD 560S</option>
+                                <option value="CX Plus SE True Wireless">CX Plus SE True Wireless</option>
+                                <option value="Momentum True Wireless 3">Momentum True Wireless 3</option>
+                                <option value="CX True Wireless">CX True Wireless</option>
+                                <option value="Sport True Wireless">Sport True Wireless</option>
                             </select>
                         </label>
                         <label>
-                            <input name="order" disabled={formData.question !== 'Online Order'} placeholder="Do You Have An Order Number?" onChange={handleChange} value={formData.order || ''}/>
+                            <input name="order" disabled={formData.question !== 'online'} placeholder="Do You Have An Order Number?" onChange={handleChange} value={formData.order || ''}/>
                         </label>
                     </fieldset>
                     <fieldset disabled={submitting}>

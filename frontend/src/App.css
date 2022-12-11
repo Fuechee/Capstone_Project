@@ -34,7 +34,7 @@ button:hover {
   background-color: steelblue;
 }
 
-.container {
+.container_reg {
   margin: 0 auto;
   max-width: 600px;
   overflow: auto;
@@ -79,12 +79,8 @@ button:hover {
 }
 
 .background {
-  background-image: linear-gradient(2deg, black, transparent);
+  background: linear-gradient(2deg, black, transparent);
   height: 100vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
 }
 
 .profile {
@@ -95,6 +91,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 10rem;
 }
 
 .contact {
@@ -104,3 +101,9 @@ button:hover {
 .contact fieldset {
     margin: 20px 0;
 }
+
+.product_background {
+  background: linear-gradient(2deg, black, transparent);
+  height: 100vh;
+}
+

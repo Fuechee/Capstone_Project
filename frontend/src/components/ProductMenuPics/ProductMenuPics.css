@@ -1,0 +1,10 @@
+.productMenu img {
+    height: 40rem;
+    width: 40rem;
+}
+
+.productMenu {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 10rem;
+}
