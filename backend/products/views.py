@@ -12,10 +12,16 @@ def get_products(request):
     serializer = ProductSerializer(products, many=True)
     return Response(serializer.data)
 
+@api_view(['POST'])
+def create_products(request):
+    serializer = ProductSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def user_products(request):
-        products = Product.objects.filter(user_id=request.user.id)
-        serializer = ProductSerializer(products, many=True)
-        return Response(serializer.data)
+    products = Product.objects.filter(user_id=request.user.id)
+    serializer = ProductSerializer(products, many=True)
+    return Response(serializer.data)

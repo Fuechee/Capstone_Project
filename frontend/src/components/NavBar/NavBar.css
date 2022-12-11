@@ -52,3 +52,16 @@ li {
 .support {
   padding-left: 30px;
 }
+
+.navProducts {
+  list-style-type: none;
+  display: flex;
+}
+
+.headphones {
+  padding-right: 150px;
+}
+
+.earphones {
+  padding-right: 30px;
+}

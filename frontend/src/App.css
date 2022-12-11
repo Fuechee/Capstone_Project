@@ -90,3 +90,10 @@ button:hover {
 .profile {
   list-style: none;
 }
+
+.productNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+

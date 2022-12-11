@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ProductsNav = () => {
     return ( 
         <nav>
-            <ul>
+            <ul className="navProducts">
                 <li className="headphones">
                     <Link to="/headphones" style={{ textDecoration: "none", color: "Black" }}>
                         <b>Headphones</b>
