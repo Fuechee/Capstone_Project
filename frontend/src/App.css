@@ -107,3 +107,10 @@ button:hover {
   height: 100vh;
 }
 
+.log_container {
+  margin: 0 auto;
+  max-width: 600px;
+  overflow: auto;
+  text-align: center;
+  margin-top: 2rem;
+}

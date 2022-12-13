@@ -11,6 +11,7 @@ import ProductsPage from "./pages/ProductsPage/ProductsPage";
 import SupportPage from "./pages/SupportPage/SupportPage";
 import Headphones from "./pages/Headphones/Headphones";
 import Earphones from "./pages/Earphones/Earphones";
+import CartPage from "./pages/CartPage/CartPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -31,7 +32,8 @@ function App() {
         <Route path="/products" element={<ProductsPage />} />
         <Route path="/support" element={<SupportPage />} />
         <Route path="/headphones" element={<Headphones />} />
-        <Route path="/Earphones" element={<Earphones />} />
+        <Route path="/earphones" element={<Earphones />} />
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
       <Footer />
     </div>
