@@ -118,38 +118,6 @@
 			"name": "AudioHead",
 			"item": [
 				{
-					"name": "All customers",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/customers/all/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"customers",
-								"all",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Registered customers",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -160,7 +128,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxMDM5NjY2LCJpYXQiOjE2NzAxNzU2NjYsImp0aSI6IjdkODU4MWE2MGNlYjQxNTA5MDMwMTRkNjZiZjY0ZjRkIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.qtyne0z2mYMwL-paovQru8TWRO2itNnz6BNq8ooLCyM",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcxNTY2OTU2LCJpYXQiOjE2NzA3MDI5NTYsImp0aSI6IjljZDNkMGRkM2Y2NjQwOTViZDk0ODQ3YWQyZjk5MWI4IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.iWGKmg1Q6Ko8swPzorq6AKFi3t6dEsGEEqP0tOvin_Q",
 									"type": "string"
 								}
 							]
@@ -169,34 +137,15 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/customers/",
-							"protocol": "http",
-							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
-							],
-							"port": "8000",
-							"path": [
-								"api",
-								"customers",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Products",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://127.0.0.1:8000/api/products/all/",
+							"raw": "http://127.0.0.1:8000/api/products/registered",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -208,8 +157,94 @@
 							"path": [
 								"api",
 								"products",
-								"all",
+								"registered"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create new Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"brand\": \"Sennheiser\",\r\n    \"type\": \"Wireless Headphones\",\r\n    \"name\": \"HD 250BT\",\r\n    \"price\": \"100.00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/products/create/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products by Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/products?type=headphones",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "headphones"
+								}
 							]
 						}
 					},
