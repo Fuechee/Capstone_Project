@@ -11,9 +11,11 @@ function ProductMenuPics() {
     <Container>
       <Row className="productMenu">
         <Col>
+        <Link to="/earphones" style={{ textDecoration: "none", color: "black" }}><h2>Earphones</h2></Link>
         <Link to="/earphones"> <img src={earphones_menu} alt="earphones menu"/></Link>
         </Col>
         <Col>
+        <Link to="/headphones" style={{ textDecoration: "none", color: "black" }}><h2>Headphones</h2></Link>
         <Link to="/headphones"> <img src={headphones_menu} alt="headphones menu"/></Link>
         </Col>
       </Row>

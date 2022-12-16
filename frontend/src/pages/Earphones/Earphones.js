@@ -18,7 +18,7 @@ const Earphones = () => {
             }
         };
         fetchProducts();
-    }),[];
+    },[]);
     return ( 
         <div>
             <h1>Earphones</h1>
