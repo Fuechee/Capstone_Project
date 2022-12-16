@@ -12,12 +12,13 @@ const Earphones = () => {
             try {
                 let response = await axios.get("http://127.0.0.1:8000/api/products?type=earphones");
                 setProducts(response.data);
+                console.log("earphones",response.data)
             } catch (error) {
                 console.log(error.response.data);
             }
         };
         fetchProducts();
-    });
+    }),[];
     return ( 
         <div>
             <h1>Earphones</h1>

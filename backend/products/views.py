@@ -5,7 +5,7 @@ from rest_framework import status
 from .serializers import ProductSerializer
 from .models import Product
 
-@api_view(['GET', 'POST'])
+@api_view(['GET'])
 @permission_classes([AllowAny])
 def products_list(request):
     if request.method == 'GET':
@@ -16,11 +16,15 @@ def products_list(request):
 
         serializer = ProductSerializer(queryset, many=True)
         return Response(serializer.data)
-    elif request.method == 'POST':
-        serializer = ProductSerializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data, status=status.HTTP_201_CREATED)    
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def product_create(request):
+    serializer = ProductSerializer(data=request.data)
+    serializer.is_valid(raise_exception=True)
+    serializer.save(user=request.user)
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
