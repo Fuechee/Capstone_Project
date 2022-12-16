@@ -1,35 +1,26 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import ItemMapper from "../../components/Headphones/ItemMapper";
+import HeadphonePresent from "../../components/Headphones/HeadphonePresent";
 
 
 const Headphones = () => {
 
     const [products, setProducts] = useState([]);
 
-    useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                let response = await axios.get("http://127.0.0.1:8000/api/products?type=headphones");
-                setProducts(response.data);
-                console.log("headphones",response.data)
-            } catch (error) {
-                console.log(error.response.data);
-            }
-        };
-        fetchProducts();
-    },[]);
+    const fetchProducts = async () => {
+        await axios
+        .get(`http://127.0.0.1:8000/api/products/`)
+        .then(res=>{setProducts(res.data)});
+    }
+
     return ( 
         <div>
-            <h1>Headphones</h1>
-            {products &&
-                products.map((product) => (
-                    <p key={product.id}>
-                        {product.brand} {product.type} {product.name} {product.price}
-                    </p>
-                ))}
+            <button onClick={()=>{fetchProducts()}}>Click to get Product</button>
+            <ItemMapper data={products} itemName={"product"} itemComponent={HeadphonePresent}/>
         </div>
      );
 }
  
-export default Headphones;
+export default Headphones; 

@@ -10,7 +10,7 @@ const Earphones = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                let response = await axios.get("http://127.0.0.1:8000/api/products?type=earphones");
+                let response = await axios.get("http://127.0.0.1:8000/api/products/");
                 setProducts(response.data);
                 console.log("earphones",response.data)
             } catch (error) {
