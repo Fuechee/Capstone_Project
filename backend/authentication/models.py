@@ -1,9 +1,10 @@
-# from django.db import models
+from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    pass
+    is_customer = models.BooleanField(default=False)
+    is_admin = True
     '''
     This is a custom version of the built in User class
     It contains all of the built in fields and functionality of the standard User
@@ -14,3 +15,6 @@ class User(AbstractUser):
     # Example (note import of models above that is commented out)
     # this will add a column to the user table
     # is_student = models.BooleanField('student status', default=False)
+    
+class Customer(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
