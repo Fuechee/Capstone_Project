@@ -1,35 +1,40 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Col, Row } from "react-bootstrap";
 
 
-const Earphones = () => {
+function Earphones() {
 
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const fetchProducts = async () => {
-            try {
-                let response = await axios.get("http://127.0.0.1:8000/api/products/");
-                setProducts(response.data);
-                console.log("earphones",response.data)
-            } catch (error) {
-                console.log(error.response.data);
-            }
-        };
-        fetchProducts();
-    },[]);
+        getProductType();
+    }, []);
+
+    async function getProductType(){
+        try {
+            let response = await axios.get('http://127.0.0.1:8000/api/products?type=Earphones', {
+                params: {
+                    type: "Earphones",
+                }
+            });
+            setProducts(response.data);
+            console.log(response.data);
+        } catch (error) {
+            console.log(error.response.data);
+        }
+    };
+
     return ( 
-        <div>
-            <h1>Earphones</h1>
-            {products &&
-                products.map((product) => (
-                    <p key={product.id}>
-                        {product.brand} {product.type} {product.name} {product.price}
-                    </p>
-                ))}
-        </div>
+        <Row>
+            {products.map((product) => {
+                <Col sm={12} md={6} lg={4} key={product.id}>
+                    {product.brand} {product.type} {product.name} {product.price}
+                </Col>
+            })}
+        </Row>
      );
+    
 }
- 
-export default Earphones;
+export default Earphones; 
