@@ -2,8 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Col, Row } from "react-bootstrap";
-
-
+import { Container } from "react-bootstrap";
 
 function Headphones() {
 
@@ -28,13 +27,16 @@ function Headphones() {
     };
 
     return ( 
-        <Row>
-            {products.map((product) => {
-                <Col sm={12} md={6} lg={4} key={product.id}>
-                    {product.brand} {product.type} {product.name} {product.price}
-                </Col>
-            })}
-        </Row>
+        <Container fluid>
+            <Row>
+                {products.map((product) => {
+                    <Col key={product.id}>
+                        {product.brand} {product.type} {product.name} {product.price}
+                    </Col>
+                })}
+            </Row>
+        </Container>
+        
      );
     
 }
