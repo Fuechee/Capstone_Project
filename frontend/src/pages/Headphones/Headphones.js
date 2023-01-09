@@ -1,7 +1,9 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import ProductsLayout from "../../components/ProductsLayout/ProductsLayout";
+import Card from 'react-bootstrap/Card';
+import CardGroup from 'react-bootstrap/CardGroup';
+import Button from 'react-bootstrap/Button';
 
 function Headphones() {
 
@@ -28,13 +30,27 @@ function Headphones() {
     return ( 
         <div className="headphone-products">
                 {products.map((product) => {
-                    return (
-                        <div key={product.id}>
-                            {product.brand} {product.type} {product.name} {product.price}
-                        </div>
-                    )
-                })}
-        <ProductsLayout/>
+                return (
+                    <div key={product.id}>
+                        <CardGroup>
+                            <Card border="black" style={{ width: '18rem' }}>
+                            <Card.Img variant="top" src={product.image} />
+                            <Card.Body>
+                            <Card.Title>{product.brand} {product.type}</Card.Title>
+                            <Card.Text style={{ color:"black" }}>
+                                {product.name}
+                            </Card.Text>
+                            <Card.Text style={{ color:"black" }}>
+                                {product.price}
+                            </Card.Text>
+                            <Button variant='primary'>Learn More</Button>
+                            <Button variant='primary'>Add to Cart</Button>
+                      </Card.Body>
+                    </Card>
+                  </CardGroup>
+                    </div>
+                )
+            })}
         </div>
      );
     

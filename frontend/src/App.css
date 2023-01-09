@@ -117,12 +117,12 @@ button:hover {
 
 .earphone-products {
   display: flex;
-  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .headphone-products {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
