@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { Col, Row } from "react-bootstrap";
+import ProductsLayout from "../../components/ProductsLayout/ProductsLayout";
 
 
 function Earphones() {
@@ -27,13 +27,15 @@ function Earphones() {
     };
 
     return ( 
-        <Row>
+        <div className="earphone-products">
             {products.map((product) => {
-                <Col sm={12} md={6} lg={4} key={product.id}>
-                    {product.brand} {product.type} {product.name} {product.price}
-                </Col>
+                return (
+                    <div key={product.id}>
+                        {product.brand} {product.type} {product.name} {product.price}
+                    </div>
+                )
             })}
-        </Row>
+        </div>
      );
     
 }
