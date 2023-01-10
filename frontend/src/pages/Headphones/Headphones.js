@@ -33,21 +33,21 @@ function Headphones() {
                 return (
                     <div key={product.id}>
                         <CardGroup>
-                            <Card border="black" style={{ width: '18rem' }}>
-                            <Card.Img variant="top" src={product.image} />
-                            <Card.Body>
-                            <Card.Title>{product.brand} {product.type}</Card.Title>
-                            <Card.Text style={{ color:"black" }}>
-                                {product.name}
-                            </Card.Text>
-                            <Card.Text style={{ color:"black" }}>
-                                {product.price}
-                            </Card.Text>
-                            <Button variant='primary'>Learn More</Button>
-                            <Button variant='primary'>Add to Cart</Button>
-                      </Card.Body>
-                    </Card>
-                  </CardGroup>
+                            <Card>
+                                <img className="card-img-top" src={product.image} alt="products"/>
+                                <Card.Body>
+                                    <Card.Title>{product.brand} {product.type}</Card.Title>
+                                    <Card.Text style={{ color:"black" }}>
+                                        {product.name}
+                                    </Card.Text>
+                                    <Card.Text style={{ color:"black" }}>
+                                        {product.price}
+                                    </Card.Text>
+                                    <Button variant='primary'>Learn More</Button>
+                                    <Button variant='primary'>Add to Cart</Button>
+                                </Card.Body>
+                            </Card>
+                        </CardGroup>
                     </div>
                 )
             })}

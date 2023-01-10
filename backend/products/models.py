@@ -8,4 +8,4 @@ class Product(models.Model):
     type = models.CharField(max_length=255)
     name = models.CharField(max_length=255)
     price = models.IntegerField()
-    image = models.ImageField(null=True, blank=True, upload_to="images/")
+    image = models.ImageField(upload_to='audio_head/media/images')

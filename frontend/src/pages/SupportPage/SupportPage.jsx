@@ -37,7 +37,7 @@ const SupportPage = () => {
                 {submitting && 
                     <div>Submtting Form...</div>
                 }
-                    <fieldset disabled={submitting}>
+                    <fieldset>
                         <label>
                             <h3>What's the Problem?</h3>
                             <select name="option" onChange={handleChange} value={formData.option || ''}>
@@ -48,28 +48,29 @@ const SupportPage = () => {
                             </select>
                         </label>
                         <label>
-                            <select name="product" disabled={formData.question !== 'Product Problems'} onChange={handleChange} value={formData.product || ''}>
+                            <select name="product" onChange={handleChange} value={formData.product || ''}>
                                 <option value="">--What's the product?--</option>
                                 <option value="Momentum 4 Wireless">Momentum 4 Wireless</option>
-                                <option value="HD 540BT">HD 540BT</option>
                                 <option value="HD 450BT">HD 450BT</option>
                                 <option value="HD 350BT">HD 350BT</option>
                                 <option value="HD 250BT">HD 250BT</option>
-                                <option value="HD 800 S">HD 800 S</option>
                                 <option value="HD 650">HD 650</option>
                                 <option value="HD 600">HD 600</option>
                                 <option value="HD 560S">HD 560S</option>
-                                <option value="CX Plus SE True Wireless">CX Plus SE True Wireless</option>
+                                <option value="Momentum True Wireless 2">Momentum True Wireless 2</option>
                                 <option value="Momentum True Wireless 3">Momentum True Wireless 3</option>
                                 <option value="CX True Wireless">CX True Wireless</option>
                                 <option value="Sport True Wireless">Sport True Wireless</option>
                             </select>
                         </label>
                         <label>
-                            <input name="order" disabled={formData.question !== 'online'} placeholder="Do You Have An Order Number?" onChange={handleChange} value={formData.order || ''}/>
+                            <input name="order" placeholder="Do You Have An Order Number?" onChange={handleChange} value={formData.order || ''}/>
+                        </label>
+                        <label>
+                            <input name="profile-issue" placeholder="What's Wrong With Your Profile?" onChange={handleChange} value={formData.order || ''}/>
                         </label>
                     </fieldset>
-                    <fieldset disabled={submitting}>
+                    <fieldset>
                         <label>
                             <h3>Your Personal Information</h3>
                             <input name="first_name" placeholder="First Name" onChange={handleChange} value={formData.first_name || ''}/>
@@ -91,10 +92,9 @@ const SupportPage = () => {
                         </label>
                         <label>
                             <input name="zip_code" placeholder="Zip Code" onChange={handleChange} value={formData.zip_code || ''}/>
-                        </label>
-                        
+                        </label>      
                     </fieldset>
-                    <button type="submit" disabled={submitting}>Submit</button>
+                    <button type="submit">Submit</button>
                 </form>
             </div>
         </div>

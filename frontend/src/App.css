@@ -123,6 +123,7 @@ button:hover {
 
 .headphone-products {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
